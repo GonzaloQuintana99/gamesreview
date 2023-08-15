@@ -1,0 +1,31 @@
+{% extends 'main/home.html' %}
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static './authmanager/styles.css' %}">
+{% endblock estilos %}
+
+    
+
+{% block content %}
+    <div class="loginContainer">
+        <h2 class="titleLR">INGRESAR</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+            <div class="containerLogin">
+                <label for="id_email">EMAIL</label>
+                <input class="inputs" type="email" name="email" maxlength="320" required id="id_email">
+        
+                <label for="id_password">CONTRASEÑA</label>
+                <input class="inputs" type="text" name="password" maxlength="50" required id="id_password">
+            
+                <button class="btnLogReg" type="submit">INGRESAR</button>
+            </div>
+            <div class="noAccount">
+                <p>¿NO TIENES CUENTA?</p>
+                <a class="btnreg" href="{% url 'registerForm' %}">REGISTRARME</a>
+            </div>
+    </form>
+    </div>  
+{% endblock content %}
+    

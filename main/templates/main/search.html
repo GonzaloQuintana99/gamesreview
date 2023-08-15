@@ -1,0 +1,42 @@
+{% extends 'main/home.html' %}
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static './main/styles.css' %}">
+{% endblock estilos %}
+
+
+{% block title %}
+    <h2 class="titleJuegos">Resultados...</h2>
+{% endblock title %}
+    
+
+{% block content %}
+
+<div class="container-Games">
+
+    {% for g in games %}
+    
+    <div class="container">
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <img src="../../../{{g.imagen}}">
+                    <h3>{{g.nombre}}</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>{{g.descripcion}}</p>
+                        <a href="#">Ver reseñas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+    
+
+</div>
+
+{% endblock content %}

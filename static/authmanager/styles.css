@@ -1,0 +1,85 @@
+:root {
+    --main-bg-color: #ffffff;
+    --main-text-color: #ffffff;
+    --main-text-hover-color: #ff9800;
+    --main-text-bg-nav-color: #5c5c5c;
+    --second-text-hover-color: #ffc340;
+    --third-text-hover-color: #ff9800;
+}
+
+.containerLogin{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs{
+    border: 0px solid;
+    border-bottom: 3px solid #5c5c5c;
+    height: 40px;
+    width: 300px;
+    transition: .8s;
+    font-size: 16px;
+    margin: 20px;
+    text-indent: 10px;
+}
+
+.inputs:focus{
+    border-bottom: 3px solid var(--third-text-hover-color);
+    outline: none;
+}
+
+.btnLogReg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    background-color: var(--third-text-hover-color);
+    color: var(--main-bg-color);
+    height: 40px;
+    width: 150px;
+    border: 0px;
+}
+
+.noAccount{
+    margin-bottom: 30px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnreg{
+    cursor: pointer;
+    background-color: rgb(174, 0, 0);
+    color: white;
+    height: 20px;
+    width: 100px;
+    border: 0px;
+    font-size: 10px;
+    margin-left: 5px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleLR{
+    display: flex;
+    justify-content: center;
+    color: var(--main-text-hover-color);
+    margin-bottom: 50px;
+    font-size: 30px;
+}
+
+.loginContainer{
+    margin: 194px;
+}
+
+.registerContainer{
+    margin: 35px;
+}
