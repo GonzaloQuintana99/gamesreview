@@ -16,12 +16,12 @@
             <div class="logo">
                 <a href="{% url 'home' %}"><img class="logo" src="{% static 'main/logo.png' %}" alt=""></a>
             </div>
-        <form action="/main/search" method="get" class="searcher">
-            {% csrf_token %}
-                <a href="{% url 'login' %}" class="btn"><i class="fa-solid fa-user login"></i></a>
-                <input placeholder="BUSCAR JUEGOS..." class="searcherInput" type="text" name="search">
-                <button class="searcherButton" type="submit">BUSCAR</button>
-        </form>
+            <form action="/main/search" method="get" class="searcher">
+                {% csrf_token %}
+                    <a href="{% url 'login' %}" class="btn"><i class="fa-solid fa-user login"></i></a>
+                    <input placeholder="BUSCAR JUEGOS..." class="searcherInput" type="text" name="search">
+                    <button class="searcherButton" type="submit">BUSCAR</button>
+            </form>
             <div>
                 <ul>
                     <li><a href="{% url 'games' %}">JUEGOS</a></li>

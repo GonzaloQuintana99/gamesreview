@@ -10,4 +10,4 @@ def search(request):
         games = Games.objects.filter(nombre__icontains=patron)
         context = {"games": games}
         return render(request, "main/search.html", context)
-    return f"Hola"
+    return render(request, "main/home.html")
