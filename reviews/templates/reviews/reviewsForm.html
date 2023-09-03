@@ -1,0 +1,64 @@
+{% extends 'main/home.html' %}
+{% load static %}
+
+{% block estilos %}
+    <link rel="stylesheet" href="{% static './reviews/styles.css' %}">
+{% endblock estilos %}
+
+{% block title %}
+    <div class="titlereviewC">
+        <h2 class="titlereviews">Crear Reseña</h2>
+    </div>
+{% endblock title %}
+
+
+
+{% block content %}
+<form action="" method="POST" class="reviewEdit" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <link href="/static/ckeditor/ckeditor.css" media="all" rel="stylesheet">
+    <script src="/static/ckeditor/ckeditor-init.js" data-ckeditor-basepath="/static/ckeditor/ckeditor/" id="ckeditor-init-script"></script>
+    <script src="/static/ckeditor/ckeditor/ckeditor.js"></script>
+
+    <label for="id_titulo">Titulo:</label>
+    <input type="text" name="titulo" maxlength="50" required id="id_titulo">
+
+    <label for="id_descripcion">Descripcion:</label>    
+    <input type="text" name="descripcion" maxlength="200" required id="id_descripcion">
+
+    <label for="id_review">Review:</label> 
+    <div class="django-ckeditor-widget" data-field-id="id_review" style="display: inline-block;">
+        <textarea name="review" cols="40" rows="10" required id="id_review" data-processed="0" data-config="{&quot;skin&quot;: &quot;moono-lisa&quot;, &quot;toolbar_Basic&quot;: [[&quot;Source&quot;, &quot;-&quot;, &quot;Bold&quot;, &quot;Italic&quot;]], &quot;toolbar_Full&quot;: [[&quot;Styles&quot;, &quot;Format&quot;, &quot;Bold&quot;, &quot;Italic&quot;, &quot;Underline&quot;, &quot;Strike&quot;, &quot;SpellChecker&quot;, &quot;Undo&quot;, &quot;Redo&quot;], [&quot;Link&quot;, &quot;Unlink&quot;, &quot;Anchor&quot;], [&quot;Image&quot;, &quot;Flash&quot;, &quot;Table&quot;, &quot;HorizontalRule&quot;], [&quot;TextColor&quot;, &quot;BGColor&quot;], [&quot;Smiley&quot;, &quot;SpecialChar&quot;], [&quot;Source&quot;]], &quot;toolbar&quot;: &quot;Full&quot;, &quot;height&quot;: 291, &quot;width&quot;: &quot;100%&quot;, &quot;filebrowserWindowWidth&quot;: 940, &quot;filebrowserWindowHeight&quot;: 725, &quot;language&quot;: &quot;es&quot;}" data-external-plugin-resources="[]" data-id="id_review" data-type="ckeditortype"></textarea>
+    </div>
+      
+    <label for="id_juego">Juego:</label>      
+    <select name="juego" id="id_juego">
+        <option value="NADA" selected>Selecciona un Juego</option>
+
+        <option value="Minecraft">Minecraft</option>
+
+        <option value="League of Legends">League of Legends</option>
+
+        <option value="Counter Strike Global Offensive">Counter Strike Global Offensive</option>
+
+        <option value="Terraria">Terraria</option>
+
+        <option value="Valorant">Valorant</option>
+
+        <option value="Grand Theft Auto V">Grand Theft Auto V</option>
+
+        <option value="Phasmophobia">Phasmophobia</option>
+
+        <option value="Rust">Rust</option>
+    </select>
+
+    <label for="id_creador">Creador:</label>
+    <input type="text" name="creador" value="{{user.username}}" maxlength="300" readonly required id="id_creador">
+
+    <input class="btnEdit" type="submit" value="Crear">
+</form>
+
+
+{% endblock content %}
+    

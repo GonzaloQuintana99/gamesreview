@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from games.admin import *
+from authmanager.admin import *
+from reviews.admin import *
 
 def home(request):
-    return render(request, "main/home.html")
+    context = {'avat': Avatar.objects.all(), "review": Reviews.objects.all()}
+    return render(request, "main/home.html", context)
 
 def search(request):
     if request.GET['search']:

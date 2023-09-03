@@ -1,0 +1,62 @@
+{% extends 'main/home.html' %}
+{% load static %}
+{% load tz %}
+
+{% block estilos %}
+    <link rel="stylesheet" href="{% static './reviews/styles.css' %}">
+{% endblock estilos %}
+
+{% block title %}
+    <div class="titlereviewC">
+        <h2 class="titlereviews animate__animated animate__backInDown">Nuevas Reseñas</h2>
+    </div>
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="containerReviews">
+    <div class="containerReviewsNew">
+
+    {% for r in review %}
+
+    <div class="reviewContainerNew animate__animated animate__fadeIn">
+        <div class="imgGameReview">
+            <img src="../../../static/uploads/{{r.juego}}.jpg">
+        </div>
+        <div class="headReview">
+            <div class="reviewChild">
+                <div>
+                    <h2 class="rTitle"><a href="{% url 'reviewc' r.id %}">{{r.titulo}}</a></h2>
+                </div>
+                <div>
+                    <p class="rDesc">{{r.descripcion}}...</p>
+                </div>
+                <div>
+                    <p class="rAutor">{{r.creador}}</p>
+                </div>
+            </div>
+        </div>
+        
+        {% if r.creador == user.username %}
+        <div class="bodyReview">
+            <div class="iconE">
+                <a href="{% url 'editreview' r.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
+            </div>
+            <div class="iconD">
+                <a href="{% url 'deletereview' r.id %}"><i class="fa-solid fa-trash-can"></i></a>
+            </div>
+        </div>
+        {% endif %}
+            
+    </div>
+
+        
+        
+
+    {% endfor %}
+</div>
+    
+</div>
+
+{% endblock content %}

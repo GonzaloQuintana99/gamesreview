@@ -1,0 +1,18 @@
+{% extends 'main/home.html' %}
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static './authmanager/styles.css' %}">
+{% endblock estilos %}
+
+    
+
+{% block content %}
+    <div class="logout animate__animated animate__zoomIn">
+        <h2 class="titleLR">¡Has cerrado sesión!</h2>
+        <div class="noAccount">
+            <p>¿Quieres volver a ingresar?</p>
+            <a class="btnreg" href="{% url 'login' %}">Ingresar</a>
+        </div>
+    </div>  
+{% endblock content %}

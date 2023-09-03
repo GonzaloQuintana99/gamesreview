@@ -15,7 +15,12 @@
     align-items: center;
 }
 
-.inputs{
+.titleCreators{
+    text-align: center;
+    font-size: 50px;
+}
+
+#id_username{
     border: 0px solid;
     border-bottom: 3px solid #5c5c5c;
     height: 40px;
@@ -26,7 +31,104 @@
     text-indent: 10px;
 }
 
-.inputs:focus{
+#id_username:focus{
+    border-bottom: 3px solid var(--third-text-hover-color);
+    outline: none;
+}
+
+#id_password{
+    border: 0px solid;
+    border-bottom: 3px solid #5c5c5c;
+    height: 40px;
+    width: 300px;
+    transition: .8s;
+    font-size: 16px;
+    margin: 20px;
+    text-indent: 10px;
+}
+
+#id_password:focus{
+    border-bottom: 3px solid var(--third-text-hover-color);
+    outline: none;
+}
+
+
+#id_password1{
+    border: 0px solid;
+    border-bottom: 3px solid #5c5c5c;
+    height: 40px;
+    width: 300px;
+    transition: .8s;
+    font-size: 16px;
+    margin: 20px;
+    text-indent: 10px;
+}
+
+#id_password1:focus{
+    border-bottom: 3px solid var(--third-text-hover-color);
+    outline: none;
+}
+
+#id_password2{
+    border: 0px solid;
+    border-bottom: 3px solid #5c5c5c;
+    height: 40px;
+    width: 300px;
+    transition: .8s;
+    font-size: 16px;
+    margin: 20px;
+    text-indent: 10px;
+}
+
+#id_password2:focus{
+    border-bottom: 3px solid var(--third-text-hover-color);
+    outline: none;
+}
+
+#id_email{
+    border: 0px solid;
+    border-bottom: 3px solid #5c5c5c;
+    height: 40px;
+    width: 300px;
+    transition: .8s;
+    font-size: 16px;
+    margin: 20px;
+    text-indent: 10px;
+}
+
+#id_email:focus{
+    border-bottom: 3px solid var(--third-text-hover-color);
+    outline: none;
+}
+
+#id_first_name{
+    border: 0px solid;
+    border-bottom: 3px solid #5c5c5c;
+    height: 40px;
+    width: 300px;
+    transition: .8s;
+    font-size: 16px;
+    margin: 20px;
+    text-indent: 10px;
+}
+
+#id_first_name:focus{
+    border-bottom: 3px solid var(--third-text-hover-color);
+    outline: none;
+}
+
+#id_last_name{
+    border: 0px solid;
+    border-bottom: 3px solid #5c5c5c;
+    height: 40px;
+    width: 300px;
+    transition: .8s;
+    font-size: 16px;
+    margin: 20px;
+    text-indent: 10px;
+}
+
+#id_last_name:focus{
     border-bottom: 3px solid var(--third-text-hover-color);
     outline: none;
 }
@@ -43,6 +145,7 @@
     height: 40px;
     width: 150px;
     border: 0px;
+    margin-top: 20px;
 }
 
 .noAccount{
@@ -68,6 +171,29 @@
     align-items: center;
 }
 
+.btncs{
+    cursor: pointer;
+    background-color: rgb(174, 0, 0);
+    color: white;
+    height: 26px;
+    width: 100px;
+    border: 0px;
+    font-size: 15px;
+    margin-left: 5px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aligbtncs{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
 .titleLR{
     display: flex;
     justify-content: center;
@@ -80,6 +206,81 @@
     margin: 194px;
 }
 
+.logout{
+    margin-top: 300px;
+    margin-bottom: 400px;
+}
+
 .registerContainer{
-    margin: 35px;
+    margin: 84px;
+}
+
+.container-Creators{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.containerC{
+    margin-bottom: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: start;
+}
+
+.errorlist{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: rgb(174, 0, 0);
+    list-style-type: none;
+}
+
+.errorlist li{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.helptext{
+    display: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: rgb(174, 0, 0);
+    list-style-type: none;
+}
+
+tr{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-size: 20px;
+}
+
+.userImg{
+    border: 3px solid var(--main-text-bg-nav-color);
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.userName{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

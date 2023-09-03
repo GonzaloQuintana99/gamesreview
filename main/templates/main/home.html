@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static './main/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="{% static './reviews/styles.css' %}">
     {% block estilos %}
     {% endblock estilos %}
-
     <title>Games Review</title>
 </head>
 <body>  
@@ -18,15 +19,28 @@
             </div>
             <form action="/main/search" method="get" class="searcher">
                 {% csrf_token %}
+                    
+                    {% if user.is_authenticated %}
+                    <div class="avatar">
+                        <a href="{% url 'editProfile' %}" class="btn"><img src="{{request.session.avatar}}" alt=""></a>
+                    </div>
+                    <input placeholder="BUSCAR JUEGOS..." class="searcherInput" type="text" name="search">
+                    <button class="searcherButton" type="submit">BUSCAR</button>
+
+                    {% else %}
+
                     <a href="{% url 'login' %}" class="btn"><i class="fa-solid fa-user login"></i></a>
                     <input placeholder="BUSCAR JUEGOS..." class="searcherInput" type="text" name="search">
                     <button class="searcherButton" type="submit">BUSCAR</button>
+
+                    {% endif %}
+                    
             </form>
             <div>
                 <ul>
                     <li><a href="{% url 'games' %}">JUEGOS</a></li>
-                    <li><a href="{% url 'games' %}">AUTORES</a></li>
-                    <li><a href="{% url 'games' %}">NUEVO</a></li>
+                    <li><a href="{% url 'creators' %}">AUTORES</a></li>
+                    <li><a href="{% url 'newreviews' %}">NUEVO</a></li>
                 </ul>
             </div>
         </div>
@@ -37,21 +51,227 @@
         {% endblock title %}
     </div>
     <div>
+            
+    </div>
+    <div>
         {% block content %}
-            <div class="topAutores">
-                <h2>TOP AUTORES</h2>
-                <div class="subAutores">
-                    <div class="autor1">AUTOR 1</div>
-                    <div class="autor2">AUTOR 2</div>
-                    <div class="autor3">AUTOR 3</div>
-                </div>
+        
+        <div class="topAutores animate__animated animate__backInDown">
+            <h2>TOP AUTORES</h2>
+            <div class="subAutores">
+                    
+                
+                {% for a in avat %}
+                    
+                    {% if forloop.counter == 2 %}
+
+                    <div class="autor1">
+                        <div class="aligtr">
+                            <h3><i class="fa-solid fa-trophy firstd"></i></h3>
+                            <h4>1°</h4>
+                        </div>
+                        <div class="imgUser">
+                            <img src="../../../media/{{a.imagen}}" alt="">
+                        </div>
+                        <p>{{a.user}}</p>
+                    </div>
+                        
+                    {% elif forloop.counter == 3 %}
+
+                    <div class="autor2">
+                        <div class="aligtr">
+                            <h3><i class="fa-solid fa-trophy twod"></i></h3>
+                            <h4>2°</h4>
+                        </div>
+                        <div class="imgUser">
+                            <img src="../../../media/{{a.imagen}}" alt="">
+                        </div>
+                        <p>{{a.user}}</p>
+                    </div>
+
+                    {% elif forloop.counter == 1 %}
+
+                    <div class="autor3">
+                        <div class="aligtr">
+                            <h3><i class="fa-solid fa-trophy tird"></i></h3>
+                            <h4>3°</h4>
+                        </div>
+                        <div class="imgUser">
+                            <img src="../../../media/{{a.imagen}}" alt="">
+                        </div>
+                        <p>{{a.user}}</p>
+                    </div>
+
+                    {% endif %}
+
+                        
+
+                {% endfor %}
+
             </div>
+        </div>
+
+        <div class="iteresting animate__animated animate__backInUp">
+            <h2>TE PODRIA INTERESAR</h2>
+        </div>
+        <div class="containerReviewsMain animate__animated animate__backInUp">
+            <div class="containerReviewsNew">
+                
+                {% for r in review %}
+
+                {% if forloop.counter == 2 %}
+            
+                <div class="reviewContainerNew">
+                    <div class="imgGameReview">
+                        <img src="../../../static/uploads/{{r.juego}}.jpg">
+                    </div>
+                    <div class="headReview">
+                        <div class="reviewChild">
+                            <div>
+                                <h2 class="rTitle"><a href="{% url 'reviewc' r.id %}">{{r.titulo}}</a></h2>
+                            </div>
+                            <div>
+                                <p class="rDesc">{{r.descripcion}}...</p>
+                            </div>
+                            <div>
+                                <p class="rAutor">{{r.creador}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {% if r.creador == user.username %}
+                    <div class="bodyReview">
+                        <div class="iconE">
+                            <a href="{% url 'editreview' r.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
+                        </div>
+                        <div class="iconD">
+                            <a href="{% url 'deletereview' r.id %}"><i class="fa-solid fa-trash-can"></i></a>
+                        </div>
+                    </div>
+                    {% endif %}
+                        
+                </div>
+                    
+
+                {% elif forloop.counter == 4 %}
+            
+                <div class="reviewContainerNew">
+                    <div class="imgGameReview">
+                        <img src="../../../static/uploads/{{r.juego}}.jpg">
+                    </div>
+                    <div class="headReview">
+                        <div class="reviewChild">
+                            <div>
+                                <h2 class="rTitle"><a href="{% url 'reviewc' r.id %}">{{r.titulo}}</a></h2>
+                            </div>
+                            <div>
+                                <p class="rDesc">{{r.descripcion}}...</p>
+                            </div>
+                            <div>
+                                <p class="rAutor">{{r.creador}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {% if r.creador == user.username %}
+                    <div class="bodyReview">
+                        <div class="iconE">
+                            <a href="{% url 'editreview' r.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
+                        </div>
+                        <div class="iconD">
+                            <a href="{% url 'deletereview' r.id %}"><i class="fa-solid fa-trash-can"></i></a>
+                        </div>
+                    </div>
+                    {% endif %}
+                        
+                </div>
+
+                {% elif forloop.counter == 8 %}
+            
+                <div class="reviewContainerNew">
+                    <div class="imgGameReview">
+                        <img src="../../../static/uploads/{{r.juego}}.jpg">
+                    </div>
+                    <div class="headReview">
+                        <div class="reviewChild">
+                            <div>
+                                <h2 class="rTitle"><a href="{% url 'reviewc' r.id %}">{{r.titulo}}</a></h2>
+                            </div>
+                            <div>
+                                <p class="rDesc">{{r.descripcion}}...</p>
+                            </div>
+                            <div>
+                                <p class="rAutor">{{r.creador}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {% if r.creador == user.username %}
+                    <div class="bodyReview">
+                        <div class="iconE">
+                            <a href="{% url 'editreview' r.id %}"><i class="fa-solid fa-pen-to-square"></i></a>
+                        </div>
+                        <div class="iconD">
+                            <a href="{% url 'deletereview' r.id %}"><i class="fa-solid fa-trash-can"></i></a>
+                        </div>
+                    </div>
+                    {% endif %}
+                        
+                </div>
+                    
+                {% endif %}
+            
+                {% endfor %}
+
+            </div>
+                
+            </div>
+            
         {% endblock content %}
 
         <footer class="footer">
             <p>© Games Review - Todos los derechos reservados.</p>
         </footer>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    {% if messages %}
+            
+        {% for message in messages %}
+            
+        
+        {% if message.tags == "success" %}
+            
+            <script>
+                Swal.fire({
+                    "title": "¡Inicio de Sesión!",
+                    "text": "{{message}}",
+                    "icon": "success",
+                    "showConfirmButton": false,
+                    "timer": 1500
+                })
+            </script>
+
+        {% endif %}     
+
+        {% if message.tags == "error" %}
+            
+            <script>
+                Swal.fire({
+                    "title": "¡Acceso Denegado!",
+                    "text": "{{message}}",
+                    "icon": "error",
+                    "showConfirmButton": false,
+                    "timer": 1500
+                })
+            </script>
+
+        {% endif %}
+                
+        {% endfor %}
+                
+    {% endif %}
     <script src="https://kit.fontawesome.com/e3b3d41c44.js" crossorigin="anonymous"></script>
 </body>
 </html>

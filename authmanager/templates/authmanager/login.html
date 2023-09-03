@@ -8,23 +8,24 @@
     
 
 {% block content %}
-    <div class="loginContainer">
+    <div class="loginContainer animate__animated animate__zoomIn">
         <h2 class="titleLR">INGRESAR</h2>
-    <form action="" method="post">
-        {% csrf_token %}
-            <div class="containerLogin">
-                <label for="id_email">EMAIL</label>
-                <input class="inputs" type="email" name="email" maxlength="320" required id="id_email">
-        
-                <label for="id_password">CONTRASEÑA</label>
-                <input class="inputs" type="text" name="password" maxlength="50" required id="id_password">
+        <form action="" method="post">
+            {% csrf_token %}
+
+        <div class="containerLogin">
             
-                <button class="btnLogReg" type="submit">INGRESAR</button>
-            </div>
-            <div class="noAccount">
-                <p>¿NO TIENES CUENTA?</p>
-                <a class="btnreg" href="{% url 'registerForm' %}">REGISTRARME</a>
-            </div>
+            <table>
+                {{form.as_table}}
+            </table>
+            
+            <input class="btnLogReg" type="submit" value="INGRESAR">
+        </div>
+        <div class="noAccount">
+            <p>¿NO TIENES CUENTA?</p>
+            <a class="btnreg" href="{% url 'register' %}">REGISTRARME</a>
+        </div>
+
     </form>
     </div>  
 {% endblock content %}

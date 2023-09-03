@@ -1,0 +1,25 @@
+{% extends 'main/home.html' %}
+{% load static %}
+
+{% block estilos %}
+    <link rel="stylesheet" href="{% static './reviews/styles.css' %}">
+{% endblock estilos %}
+
+{% block title %}
+    <div class="titlereviewC">
+        <h2 class="titlereviews">Editar Reseña</h2>
+    </div>
+{% endblock title %}
+
+
+
+{% block content %}
+<form action="" method="POST" class="reviewEdit" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{form.media}}
+        {{form.as_table}}
+    </table>
+    <input class="btnEdit" type="submit" value="Editar">
+</form>
+{% endblock content %}

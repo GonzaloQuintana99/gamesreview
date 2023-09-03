@@ -1,0 +1,42 @@
+{% extends 'main/home.html' %}
+{% load static %}
+
+{% block estilos %}
+    <link rel="stylesheet" href="{% static './authmanager/styles.css' %}">
+{% endblock estilos %}
+
+{% block title %}
+    <h2 class="titleCreators animate__animated animate__backInDown">Lista de Creadores</h2>
+{% endblock title %}
+    
+
+{% block content %}
+
+<div class="container-Creators">
+
+        
+
+    {% for a in avat %}
+    
+        
+    <div class="containerC animate__animated animate__fadeIn">
+    
+            
+            
+        <div class="userImg">
+            <img src="../../../media/{{a.imagen}}" alt="{{a.imagen}}">
+        </div>
+
+
+        <div class="userName">
+            <h2>{{a.user}}</h2>
+        </div>
+    </div>
+    
+
+    {% endfor %}
+    
+
+</div>
+
+{% endblock content %}

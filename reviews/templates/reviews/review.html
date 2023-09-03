@@ -1,0 +1,42 @@
+{% extends 'main/home.html' %}
+{% load static %}
+
+{% block estilos %}
+    <link rel="stylesheet" href="{% static './reviews/styles.css' %}">
+{% endblock estilos %}
+
+
+{% block content %}
+
+<div class="containerReviews">
+    
+    {% for r in reviewc %}
+        {% for a in avat %}
+        {% if r.creador == a.user.username %}
+        
+        <div class="reviewImg">
+            <img src="../../../media/{{a.imagen}}">
+            <h3>{{r.creador}}</h3>
+            <a href="../reviews/{{r.juego}}">{{r.juego}}</a>
+            <p>Fecha de Publicación:</p>
+            <p>{{r.fecha}}</p>
+        </div>
+
+        {% endif %}
+            
+        {% endfor %}
+        
+        <div class="reviewContainerView">
+            <div>
+                <h2>{{r.titulo}}</h2>
+                {{r.review | safe}}
+            </div>
+        </div>
+
+
+            
+    {% endfor %}
+    
+</div>
+
+{% endblock content %}

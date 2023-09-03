@@ -105,6 +105,36 @@ body{
     height: 400px;
 }
 
+.iteresting{
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.iteresting h2{
+    margin-top: 50px;
+    text-indent: 10px;
+    font-size: 20px;
+    color: var(--main-text-color);
+    background-color: var(--main-text-bg-nav-color);
+    width: 100%;
+}
+
+.topAutores p{
+    text-align: center;
+    color: var(--main-text-bg-nav-color);
+    margin-top: 5px;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.topAutores h4{
+    color: var(--second-text-hover-color);
+    margin: 10px;
+    font-size: 24px;
+    font-weight: 800;
+}
+
 .topAutores h2{
     text-indent: 10px;
     font-size: 20px;
@@ -118,16 +148,34 @@ body{
     justify-content: space-around;
 }
 
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .autor1{
-    margin-top: 300px;
+    height: 250px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.imgUser{
+    border: 2px solid var(--second-text-hover-color);
+    height: 100px;
+    width: 100px;
 }
 
 .autor2{
-    margin-top: 200px;
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
 }
 
 .autor3{
-    margin-top: 250px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
 }
 
 .titleJuegos{
@@ -230,9 +278,70 @@ body{
 .container-Games{
     margin-right: auto;
     margin-left: auto;
-    width: 60%;
+    width: 80%;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-evenly;
     margin-bottom: 200px;
+    margin-top: 130px;
+}
+
+h4{
+    text-align: center;
+}
+
+.avatar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 36px;
+    width: 36px;
+    margin-right: 10px;
+}
+
+.avatar img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 36px;
+    max-height: 36px;
+}
+
+.aligtr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.twod{
+    color: rgb(192, 192, 192);
+    margin: 0;
+    padding: 0;
+}
+
+.firstd{
+    color: gold;
+    margin: 0;
+    padding: 0;
+}
+
+.tird{
+    color: rgb(218, 142, 42);
+    margin: 0;
+    padding: 0;
+}
+
+h3{
+    margin: 0;
+    padding: 0;
+}
+
+.containerReviewsMain{
+    margin-right: auto;
+    margin-left: auto;
+    width: 70%;
+    display: flex;
+    margin-bottom: 50px;
 }

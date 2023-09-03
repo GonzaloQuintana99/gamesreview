@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+:root {
+    --main-bg-color: #ffffff;
+    --main-text-color: #ffffff;
+    --main-text-hover-color: #ff9800;
+    --main-text-bg-nav-color: #5c5c5c;
+    --second-text-hover-color: #ffc340;
+    --third-text-hover-color: #ff9800;
+  }
+
+.reviewContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
+
+.reviews{
+    padding: 3px;
+    color: var(--main-text-hover-color);
+    border: solid 2px var(--main-text-bg-nav-color);
+    cursor: pointer;
+    font-size: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-decoration: none;
+}
+
+.reviews i {
+    margin-right: 5px;
+}
+
+.reviews:hover{
+    display: inline-block;
+    animation: rubberBand; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+}
+
+.titlereviewC{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titlereviews{
+    text-align: center;
+    font-size: 50px;
+}
+
+.reviewReady{
+    display: flex;
+    flex-direction: column;
+}
+
+.headReview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+}
+
+.bodyReview{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 5%;
+}
+
+.iconE{
+    text-decoration: none;
+    margin-right: 12px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.iconE a{
+    text-decoration: none;
+    color: var(--second-text-hover-color);
+}
+
+.iconD{
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.iconD a{
+    color: red;
+    text-decoration: none;
+}
+
+.reviewEdit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 245px;
+}
+
+.reviewEdit input{
+    font-size: 18px;
+}
+
+.reviewEdit label{
+    margin-right: 10px;
+}
+
+.btnEdit{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    background-color: var(--third-text-hover-color);
+    color: var(--main-bg-color);
+    height: 40px;
+    width: 150px;
+    border: 0px;
+}
+
+#id_descripcion{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+#id_review{
+    font-size: 18px;
+}
+
+.imgGameReview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 200px;
+    max-width: 20%;
+}
+
+.imgGameReview img{
+    border: 2px solid var(--main-text-bg-nav-color);
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.reviewChild{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rTitle{
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+
+.rTitle a{
+    text-decoration: underline var(--main-text-bg-nav-color);
+    color: var(--main-text-bg-nav-color);
+    transition: .5s;
+}
+
+.rTitle a:hover{
+    text-decoration: underline var(--third-text-hover-color);
+    color: var(--third-text-hover-color);
+}
+
+.rDesc{
+    font-size: 18px;
+    margin-left: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.rAutor{
+    margin: 0;
+    padding: 0;
+    text-align: end;
+    height: 100%;
+}
+
+.reviewContainerView{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.reviewContainerView h2{
+    margin-top: 0;
+}
+
+pre{
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;
+}
+
+.reviewImg{
+    padding-top: 10px;
+    margin-right: 20px;
+    height: 300px;
+    width: 300px;
+}
+
+.reviewImg h3{
+    text-align: center;
+    color: var(--third-text-hover-color);
+}
+
+.reviewImg a{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--main-text-bg-nav-color);
+    text-decoration: underline;
+}
+
+.reviewImg p{
+    margin: 0;
+    text-align: center;
+}
+
+.reviewImg img{
+    border: 2px solid var(--main-text-bg-nav-color);
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.containerReviews{
+    margin-right: auto;
+    margin-left: auto;
+    width: 70%;
+    display: flex;
+    margin-top: 150px;
+    margin-bottom: 390px;
+}
+
+.reviewContainerNew{
+    display: flex;
+    width: 100%;
+}
+
+.containerReviewsNew{
+    display: flex;
+    flex-direction: column;
+}

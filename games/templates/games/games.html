@@ -6,7 +6,7 @@
 {% endblock estilos %}
 
 {% block title %}
-    <h2 class="titleJuegos">Lista de Juegos</h2>
+    <h2 class="titleJuegos animate__animated animate__backInDown">Lista de Juegos</h2>
 {% endblock title %}
     
 
@@ -16,18 +16,19 @@
 
     {% for g in games %}
     
-    <div class="container">
+    <div class="container animate__animated animate__fadeIn">
         <div class="card">
             <div class="face face1">
                 <div class="content">
-                    <img src="../../../{{g.imagen}}">
+                    <img src="../../../static/uploads/{{g.juego}}.jpg">
                     <h3>{{g.nombre}}</h3>
+                    
                 </div>
             </div>
             <div class="face face2">
                 <div class="content">
                     <p>{{g.descripcion}}</p>
-                        <a href="#">Ver reseñas</a>
+                        <a href="../reviews/{{g.juego}}">Ver Reseñas</a>
                 </div>
             </div>
         </div>

@@ -9,24 +9,20 @@
 
 .titleJuegos{
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
 }
 
 .container-Games{
-    margin-right: auto;
-    margin-left: auto;
-    width: 60%;
+    width: 80%;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 200px;
+    margin-bottom: 50px;
 }
 
 .container{
-    width: 400px;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
+    width: 20%;
+    margin-right: 70px;
 }
 
 .container .card{

@@ -1,16 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-class User(models.Model):
-    nombre = models.CharField(max_length=50)
-    apellido = models.CharField(max_length=50)
-    email = models.EmailField()
-    password = models.CharField(max_length=50)
-    creador = models.BooleanField()
+
+class Avatar(models.Model):
+    imagen = models.ImageField(upload_to="avatares", default="/media/avatares/default.png")
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.nombre}"
-    
-    class Meta:
-        verbose_name = "Usuario"
-        verbose_name_plural = "Usuarios"
-        ordering = ["nombre"]
+        return f"{self.user}, {self.imagen}"
