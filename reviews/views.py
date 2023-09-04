@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
 from django.urls import reverse_lazy
+import datetime
 
 from authmanager.models import Avatar
 
@@ -137,7 +138,8 @@ def createReview(req):
     return render(req, 'reviews/reviewsForm.html', {'form': miForm})
 
 def reviewsNew(req):
-    mydate = django.utils.timezone.now
+    mydate = datetime.date.today()
+    # mydate.strftime('%m/%d/%Y')
     game = Reviews.objects.all()
-    ctx = {"review": game, "mydate": mydate}
+    ctx = {"review": game, "mydate": mydate.strftime('%d-%m-%Y')}
     return render(req, 'reviews/reviewNew.html', ctx)

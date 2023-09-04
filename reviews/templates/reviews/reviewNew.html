@@ -20,6 +20,9 @@
 
     {% for r in review %}
 
+    {% if r.fecha == mydate %}
+        
+        
     <div class="reviewContainerNew animate__animated animate__fadeIn">
         <div class="imgGameReview">
             <img src="../../../static/uploads/{{r.juego}}.jpg">
@@ -51,7 +54,7 @@
             
     </div>
 
-        
+    {% endif %}
         
 
     {% endfor %}

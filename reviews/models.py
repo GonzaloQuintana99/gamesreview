@@ -2,6 +2,7 @@ from django.db import models
 from django.forms import ModelForm
 from ckeditor.fields import RichTextField
 import django.utils.timezone
+import datetime
 
 GAME_CHOICE = [
             ("NADA", "Selecciona un Juego"),
@@ -26,7 +27,7 @@ class Reviews(models.Model):
         default="NADA",
     )
     creador = models.CharField(max_length=300, default="{{user.username}}")
-    fecha = models.DateField(default=django.utils.timezone.now)
+    fecha = models.CharField(max_length=200, default=datetime.date.today().strftime('%d-%m-%Y'))
 
     def __str__(self):
         return f"{self.titulo}"
